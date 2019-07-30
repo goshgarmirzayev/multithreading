@@ -11,7 +11,6 @@ public class Consumer extends Thread {
     }
 
     public void removeFromList(List<Integer> integerList) throws Exception {
-
         if (integerList.size() > 0) {
             System.out.println("removed " + integerList.remove(integerList.size() - 1));
         }

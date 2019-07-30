@@ -9,13 +9,12 @@ public class Producer extends Thread {
 
     public Producer(List<Integer> integerList) {
         this.integerList = integerList;
-
     }
 
     public void fillList(List<Integer> integerList) throws Exception {
-        if (integerList.size() > 100) {
-            System.out.println("Size is 100 please wait");
-            Thread.sleep(5000);
+        if (integerList.size() >= 100) {
+            System.out.println("Size is 100 please wait we removing elements");
+            sleep(5000);
 
         } else {
             integerList.add(++element);
@@ -31,5 +30,15 @@ public class Producer extends Thread {
             }
         } catch (Exception e) {
         }
+    }
+
+    private void sleep(int mSec) {
+        try {
+
+            Thread.sleep(mSec);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 }
